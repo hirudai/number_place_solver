@@ -1,8 +1,11 @@
 module NumberPlaceSolver
   class PuzzleCells
     attr_accessor :puzzle_cells, :rows, :columns, :sections
-    def initialize(nums=[])
-      raise "Definition of Cells is insufficient" if nums.count != 9*9
+
+    def initialize(nums = [])
+      nums.flatten!
+      raise "Definition of Cells is insufficient" if nums.count != 9 * 9
+
       # puzzle_cells[row_index][column_index]
       @puzzle_cells = []
       9.times do |row_index|
@@ -21,7 +24,7 @@ module NumberPlaceSolver
     # for debug
     def print_puzzle
       @puzzle_cells.each do |r|
-        puts r.map{|c| c.fix_num}.join("")
+        puts r.map { |c| c.fix_num }.join("")
       end
     end
 
@@ -40,7 +43,7 @@ module NumberPlaceSolver
           check_cell_list << @puzzle_cells[row_index][column_index].fix_num
         end
       end
-      return check_cell_list.join("")
+      check_cell_list.join("")
     end
 
     private
@@ -77,6 +80,5 @@ module NumberPlaceSolver
         end
       end
     end
-
   end
 end

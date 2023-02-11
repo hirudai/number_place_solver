@@ -9,8 +9,8 @@ require_relative "number_place_solver/puzzle_cells"
 require_relative "number_place_solver/solver"
 require_relative "number_place_solver/strategy/possibility"
 require_relative "number_place_solver/strategy/alliance"
+require_relative "number_place_solver/strategy/fix_only_candidate"
 require_relative "number_place_solver/formatter/simple_cui"
-
 
 module NumberPlaceSolver
   class Error < StandardError; end

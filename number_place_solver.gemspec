@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["hirudai"]
   spec.email         = ["hirudai@gmail.com"]
 
-  spec.description   = %q{solve number_place_solver puzzle}
-  spec.summary       = %q{solve number_place_solver puzzle}
+  spec.description   = "solve number_place_solver puzzle"
+  spec.summary       = "solve number_place_solver puzzle"
   spec.homepage = ""
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"

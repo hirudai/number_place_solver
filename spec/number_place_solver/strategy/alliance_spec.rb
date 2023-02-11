@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe NumberPlaceSolver::Strategy::Alliance do
   describe "unknown_cells test" do

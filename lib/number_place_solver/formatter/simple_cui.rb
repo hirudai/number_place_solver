@@ -3,6 +3,7 @@ module NumberPlaceSolver
     class SimpleCui
       def initialize(puzzle)
         raise "puzzle must be PuzzleCells class" if puzzle.class.to_s != "NumberPlaceSolver::PuzzleCells"
+
         @puzzle = puzzle
         @output = build_output_str
       end
@@ -30,8 +31,7 @@ module NumberPlaceSolver
       def num_sepalator(row)
         str = "# #{row[0].fix_num} | #{row[1].fix_num} | #{row[2].fix_num} "
         str = str.concat("# #{row[3].fix_num} | #{row[4].fix_num} | #{row[5].fix_num} ")
-        str = str.concat("# #{row[6].fix_num} | #{row[7].fix_num} | #{row[8].fix_num} #\n")
-        return str
+        str.concat("# #{row[6].fix_num} | #{row[7].fix_num} | #{row[8].fix_num} #\n")
       end
 
       def build_output_str
@@ -41,14 +41,14 @@ module NumberPlaceSolver
           3.times do |j|
             target_index = i * 3 + j
             str = str.concat(num_sepalator(@puzzle.rows[target_index].cells))
-            if j < 2
-              str = str.concat(normal_sepalator)
-            else
-              str = str.concat(bold_sepalator)
-            end
+            str = if j < 2
+                    str.concat(normal_sepalator)
+                  else
+                    str.concat(bold_sepalator)
+                  end
           end
         end
-        return str 
+        str
       end
     end
   end
